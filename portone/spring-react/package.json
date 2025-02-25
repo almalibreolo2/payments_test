@@ -1,0 +1,32 @@
+{
+  "name": "portone-sample",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"./gradlew bootRun\"",
+    "build": "vite build",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@portone/browser-sdk": "^0.0.10",
+    "@portone/server-sdk": "^0.7.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "dotenv-flow": "^4.1.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
