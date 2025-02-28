@@ -51,7 +51,19 @@ export default function PaymentForm({
       orderName: item.name,
       totalAmount: item.price,
       currency: item.currency as PortOne.Entity.Currency,
+      //신용카드 : CARD
+      //실시간 계좌이체 : TRANSFER
+      //가상계좌 : VIRTUAL_ACCOUNT
+      //휴대폰 소액결제 : MOBILE
+      //간편 결제 : EASY_PAY
       payMethod: "CARD",
+      // PG 사 별로 필수 데이터가 다름.
+      // KG 이니시스: 구매자 전체 이름, 구매자 연락처(모바일일 경우 optional), 구매자 이메일(모바일일 경우 optional)
+      customer: {
+        fullName: '테스트',
+        phoneNumber: '01012341234',
+        email: 'test@estsecurity.com',
+      },
       customData: {
         item: item.id,
       },
@@ -121,6 +133,7 @@ export default function PaymentForm({
           닫기
         </button>
       </dialog>
+       {/*  */}
       <dialog open={paymentStatus.status === "VIRTUAL_ACCOUNT_ISSUED"}>
         <header>
           <h1>가상계좌 발급 완료</h1>
